@@ -9,7 +9,7 @@
 	});
 
 	$.extend(MediaElementPlayer.prototype, {
-		buildbacklight = function(player, controls, layers, media) {
+		buildbacklight : function(player, controls, layers, media) {
 			if (!player.isVideo)
 				return;
 
@@ -38,10 +38,8 @@
 					.css('left',0)
 					.width(player.width).height(player.height),
 
-				i,
 				copyCanvas = document.createElement('canvas'),
 				copyContext = copyCanvas.getContext('2d'),
-				pixels,
 				keepUpdating = true,
 				isActive = true,
 				timer = null,
@@ -81,7 +79,7 @@
 			glowContext.fillRect(width+size, height+size, size, size); 
 
 			// bottom
-			var gradient = addGlow(backgroundColor,glowContext.createLinearGradient(size, size+height, size, size+height+size));
+			gradient = addGlow(backgroundColor,glowContext.createLinearGradient(size, size+height, size, size+height+size));
 			glowContext.fillStyle = gradient; 
 			glowContext.fillRect(size, size+height, width, size); 
 
