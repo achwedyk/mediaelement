@@ -953,8 +953,6 @@
 		
 		buildkeyboard: function(player, controls, layers, media) {
 
-				var t = this;
-				
 				// listen for key presses
 				$(document).keydown(function(e) {
 						

@@ -19,7 +19,7 @@
 			if (player.tracks.length == 0)
 				return;
 
-			var t= this, i, options = '';
+			var t = this, i;
 
 			player.chapters = 
 					$('<div class="mejs-chapters mejs-layer"></div>')
@@ -51,7 +51,7 @@
 						
 						// handle clicks to the language radio buttons
 						.delegate('input[type=radio]','click',function() {
-							lang = this.value;
+							var lang = this.value;
 
 							if (lang == 'none') {
 								player.selectedTrack = null;

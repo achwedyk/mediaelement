@@ -51,7 +51,7 @@
 				if (!volumeSlider.is(':visible') && typeof secondTry != 'undefined') {
 					volumeSlider.show();
 					positionVolumeHandle(volume, true);
-					volumeSlider.hide()
+					volumeSlider.hide();
 					return;
 				}
 			
@@ -115,7 +115,6 @@
 				
 					var
 						railHeight = volumeTotal.height(),
-						totalTop = parseInt(volumeTotal.css('top').replace(/px/,''),10),
 						newY = e.pageY - totalOffset.top;
 						
 					volume = (railHeight - newY) / railHeight;

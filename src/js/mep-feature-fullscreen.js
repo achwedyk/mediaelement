@@ -51,10 +51,7 @@
 			}
 
 			var t = this,		
-				normalHeight = 0,
-				normalWidth = 0,
-				container = player.container,						
-				fullscreenBtn = 
+				fullscreenBtn =
 					$('<div class="mejs-button mejs-fullscreen-button">' + 
 						'<button type="button" aria-controls="' + t.id + '" title="' + t.options.fullscreenText + '"></button>' + 
 					'</div>')
@@ -137,7 +134,7 @@
 									.height( t.container.height() - t.controls.height() );
 								
 								// over controls, but not the fullscreen button
-								var fullScreenBtnOffset = fullscreenBtn.offset().left - t.container.offset().left;
+								var fullScreenBtnOffset = fullscreenBtn.offset().left - t.container.offset().left,
 									fullScreenBtnWidth = fullscreenBtn.outerWidth(true);
 									
 								controlsLeftHoverDiv
@@ -260,7 +257,8 @@
 		},
 		enterFullScreen: function() {
 			
-			var t = this;
+			var t = this,
+                docStyleOverflow, normalHeight, normalWidth;
 			
 			// firefox+flash can't adjust plugin sizes without resetting :(
 			if (t.media.pluginType !== 'native' && (mejs.MediaFeatures.isFirefox || t.options.usePluginFullScreen)) {

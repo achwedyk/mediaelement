@@ -55,22 +55,22 @@ mejs.MediaFeatures = {
 			t.fullScreenEventName = (t.hasWebkitNativeFullScreen) ? 'webkitfullscreenchange' : 'mozfullscreenchange';
 			
 			
-			t.isFullScreen = function() {
-				if (v.mozRequestFullScreen) {
-					return d.mozFullScreen;
-				} else if (v.webkitRequestFullScreen) {
-					return d.webkitIsFullScreen;
-				}
-			}
+			t.isFullScreen = function () {
+                if (v.mozRequestFullScreen) {
+                    return d.mozFullScreen;
+                } else if (v.webkitRequestFullScreen) {
+                    return d.webkitIsFullScreen;
+                }
+            };
 					
-			t.requestFullScreen = function(el) {
-		
-				if (t.hasWebkitNativeFullScreen) {
-					el.webkitRequestFullScreen();
-				} else if (t.hasMozNativeFullScreen) {
-					el.mozRequestFullScreen();
-				}
-			}
+			t.requestFullScreen = function (el) {
+
+                if (t.hasWebkitNativeFullScreen) {
+                    el.webkitRequestFullScreen();
+                } else if (t.hasMozNativeFullScreen) {
+                    el.mozRequestFullScreen();
+                }
+            };
 			
 			t.cancelFullScreen = function() {				
 				if (t.hasWebkitNativeFullScreen) {

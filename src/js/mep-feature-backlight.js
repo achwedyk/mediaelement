@@ -179,13 +179,13 @@
 			lightsContext = lightsCanvas.getContext('2d'),
 			width = canvas.width,
 			height = canvas.height,
-			g,
+			gradient,
 			topLights = getMidColors(canvas, context, hBlocks, depth, 'top'),
 			bottomLights = getMidColors(canvas, context, hBlocks, depth, 'bottom'),
 			leftLights = getMidColors(canvas, context, vBlocks, depth, 'left'),
 			rightLights = getMidColors(canvas, context, vBlocks, depth, 'right'),
 			corners = [],
-			stopSize = 0;
+			stopSize;
 
 		lightsCanvas.width = width + size + size;
 		lightsCanvas.height = height + size + size;
